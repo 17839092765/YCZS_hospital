@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <Footer />
-    <Synthetical />
+    <!-- <Synthetical /> -->
+    <router-view></router-view>
     <Header />
   </div>
 </template>

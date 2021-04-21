@@ -38,11 +38,12 @@ export default {
 <style lang='scss' scoped>
 .synleft {
   width: 100%;
-  height: 100%;
+  height: 7.9rem;
   box-sizing: border-box;
-  padding: 0.84rem 0 0 0;
+  margin: 0.84rem 0 0 0;
   display: flex;
   justify-content: space-around;
+  align-content: space-between;
   flex-wrap: wrap;
 }
 </style>

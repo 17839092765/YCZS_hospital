@@ -4,7 +4,7 @@
       :class="index === active && 'active'"
       v-for="(item, index) in list"
       :key="index"
-      @click="active = index"
+      @click="nav(index)"
     >
       {{ item }}
     </div>
@@ -29,7 +29,12 @@ export default {
       active: 0,
     };
   },
-  methods: {},
+  methods: {
+    nav(index) {
+      this.active = index;
+      this.$router.push("/" + index);
+    },
+  },
   mounted() {},
   beforeDestroy() {},
   components: {},
