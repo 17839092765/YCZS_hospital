@@ -102,6 +102,6 @@ export default {
 
 <style lang='scss' scoped>
 .chart {
-  height: 1.8rem;
+  height: 2.2rem;
 }
 </style>

@@ -32,10 +32,10 @@ export default {
 
 <style lang="scss" scoped>
 .synthetical {
-  height: 100%;
+  // height: 95%;
   .part {
     position: absolute;
-    width: 4.5rem;
+    width: 5rem;
     height: 100%;
   }
   .left {

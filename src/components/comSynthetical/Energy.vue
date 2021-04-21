@@ -29,21 +29,13 @@ export default {
           {
             name: "",
             type: "pie",
-            radius: ["30%", "50%"],
+            radius: ["40%", "60%"],
             center: ["65%", "50%"],
             avoidLabelOverlap: false,
             label: {
               show: false,
               position: "center",
             },
-            // emphasis: {
-            //   label: {
-            //     show: true,
-            //     fontSize: "12",
-            //     fontWeight: "bold",
-            //     color: "#fff",
-            //   },
-            // },
             labelLine: {
               show: true,
             },
@@ -56,7 +48,7 @@ export default {
               fontSize: "10",
               color: "#fff",
               align: "left",
-              alignTo:'labelLine',
+              alignTo: "labelLine",
               formatter: function (params) {
                 return `${params.name} ${params.value}kWh`;
               },

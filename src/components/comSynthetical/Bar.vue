@@ -24,7 +24,7 @@ export default {
           type: "category",
           data: ["科研设备", "公共设备", "公用资源", "停车场"],
           axisLabel: {
-            fontSize: 7,
+            fontSize: 8,
           },
           axisTick: {
             show: false,
@@ -38,14 +38,14 @@ export default {
             },
           },
           axisLabel: {
-            fontSize:8,
+            fontSize:10,
           },
         },
         grid: {
           top: "15%",
           bottom: "15%",
           left: "12%",
-          right: "10%",
+          right: "0%",
         },
         series: [
           {
@@ -86,6 +86,7 @@ export default {
 
 <style lang='scss' scoped>
 .chart {
-  height: 1.8rem;
+  // height: 1.8rem;
+  height: 2.6rem;
 }
 </style>
