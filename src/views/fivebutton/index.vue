@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -64,14 +65,22 @@ export default {
       active: 1,
     };
   },
-  computed: {},
+  computed: {
+    ...mapState({
+      chailouFalg: (state) => state.chailouFalg,
+    }),
+  },
   watch: {},
   methods: {
     interactive(active) {
+      this.$store.commit("baojing", false);
+
       this.active = active;
       switch (active) {
         case 1:
           console.log(1);
+          this.$store.commit("baojing", true);
+
           break;
         case 2:
           break;
@@ -94,7 +103,7 @@ export default {
     },
     // 拆楼
     reli() {
-      console.log(1);
+      this.$store.commit("chailouFalg", true);
       let f = new BPFunctionData();
       f.objectName = "BP_BuildLayer_5";
       f.functionName = "Openlayer";

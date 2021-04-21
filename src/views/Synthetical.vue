@@ -7,7 +7,10 @@
       <RightPages />
     </div>
     <FiveButton />
-    <div @click="isShowTag = true" class="button">隐藏按钮</div>
+    <!-- <div @click="isShowTag = true" class="button">隐藏按钮</div> -->
+    <BaoJing v-if="baojing" />
+    <RenyuanReli />
+    <div @click="isShowTag = !isShowTag" class="button">隐藏按钮</div>
     <transition name="tag">
       <div v-if="isShowTag" class="tag" @click="isShowTag = false">
         <div>
@@ -20,15 +23,23 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Left from "../components/comSynthetical/Left";
 import RightPages from "./RightPages";
 import FiveButton from "./fivebutton";
+import BaoJing from "./baojing";
+import RenyuanReli from "./renyuanreli";
 export default {
   name: "Synthetical",
   data() {
     return {
       isShowTag: false,
     };
+  },
+  computed: {
+    ...mapState({
+      baojing: (state) => state.baojing,
+    }),
   },
   methods: {},
   mounted() {},
@@ -37,6 +48,8 @@ export default {
     Left,
     RightPages,
     FiveButton,
+    RenyuanReli,
+    BaoJing,
   },
 };
 </script>
