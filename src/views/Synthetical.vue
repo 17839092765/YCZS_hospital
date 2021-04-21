@@ -7,12 +7,11 @@
       <RightPages />
     </div>
     <FiveButton />
-    <div @click="isShowTag = true" class="button">隐藏按钮</div>
     <BaoJing v-if="baojing" />
     <RenyuanReli />
-    <!-- <div @click="isShowTag = !isShowTag" class="button">隐藏按钮</div> -->
+    <div @click="isShowTag = !isShowTag" class="button">隐藏按钮</div>
     <transition name="tag">
-      <div v-if="isShowTag" class="tag" @click="isShowTag = false">
+      <div v-if="isShowTag" class="tag">
         <div>
           <span>报警：</span>
           <span>监测到电梯报警</span>
@@ -41,7 +40,11 @@ export default {
       baojing: (state) => state.baojing,
     }),
   },
-  methods: {},
+  methods: {
+    a() {
+      let a = 10;
+    },
+  },
   mounted() {},
   beforeDestroy() {},
   components: {

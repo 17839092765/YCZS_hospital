@@ -3,9 +3,9 @@
     <div @click="golouceng(11)" class="top">
       住院层
     </div>
-    <div @click="golouceng(10)" class="case">F16</div>
+    <div @click="golouceng(8)" class="case">F16</div>
     <div @click="golouceng(9)" class="case">F15</div>
-    <div @click="golouceng(8)" class="case">F14</div>
+    <div @click="golouceng(10)" class="case">F14</div>
     <div @click="black()" class="box">
       关闭
     </div>
