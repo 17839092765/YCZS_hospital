@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div v-show="flag" class="home">
     <Footer />
     <Synthetical />
     <Header />
@@ -12,6 +12,11 @@ import Footer from "../components/Footer";
 import Synthetical from "./Synthetical";
 export default {
   name: "Home",
+  data() {
+    return {
+      flag: true,
+    };
+  },
   components: {
     Header,
     Footer,
