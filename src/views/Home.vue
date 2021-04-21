@@ -1,7 +1,8 @@
 <template>
   <div v-show="flag" class="home">
     <Footer />
-    <Synthetical />
+    <!-- <Synthetical /> -->
+    <router-view></router-view>
     <Header />
   </div>
 </template>
