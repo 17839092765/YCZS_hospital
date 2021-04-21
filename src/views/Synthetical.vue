@@ -6,12 +6,14 @@
     <div class="right part">
       <RightPages />
     </div>
+    <FiveButton />
   </div>
 </template>
 
 <script>
 import Left from "../components/comSynthetical/Left";
 import RightPages from "./RightPages";
+import FiveButton from "./fivebutton";
 export default {
   name: "Synthetical",
   data() {
@@ -23,6 +25,7 @@ export default {
   components: {
     Left,
     RightPages,
+    FiveButton,
   },
 };
 </script>

@@ -75,6 +75,7 @@ export default {
 .title {
   width: 100%;
   height: 0.3rem;
+  font-weight: 600;
   text-indent: 0.2rem;
   background: url("../../../assets/img/box-title.png") no-repeat center/cover;
 }
