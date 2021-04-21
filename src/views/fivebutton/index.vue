@@ -105,21 +105,43 @@ export default {
 
     // 电梯
     async dianti() {
-      console.log("dianti");
       if (__g) {
-        __g.weather.setDarkMode(true);
-        // __g.tileLayer.enableXRay("4A6E3FD040D6B80DF6D0A29CF4CC57C7", [
-        //   1,
-        //   0,
-        //   1,
-        //   0.0381,
-        // ]);
-        // __g.tileLayer.disableXRay("4A6E3FD040D6B80DF6D0A29CF4CC57C7");
-
-        let coordinate = [-500.14, -8038.16, 5.47]; //热力点的坐标
-        let radius = 4000; //热力点影像半径范围
-        let heatValue = 0.8; //热力值
-        o1 = new HeatMapPointData("1", coordinate, radius, heatValue);
+        console.log(1);
+        /* 
+         1）点击【电梯】，时间变夜晚，同时箭头所指楼宇变X光模式；  镜头正视建筑，并叠加电梯3dt.
+        （2）在红色异常电梯上，打红色异常电梯标签【住院楼-5F-医梯】   点击首页需回到默认初始视角和状态。
+        */
+        /* 设置时间 */
+        // await __g.weather.setDateTime(2021, 4, 22, 23, 0, 0, false);
+        /* X光模式 */
+        await __g.tileLayer.enableXRay(
+          "01CC25A649555B383446ED9CF9FC6ED1",
+          Color.LightBLue
+        );
+        /* 镜头正视建筑 */
+        // await __g.camera.set(
+        //   168.938278,
+        //   761.998657,
+        //   243.821777,
+        //   -27.264795,
+        //   84.205376,
+        //   0
+        // );
+        /* 打红色异常电梯标签【住院楼-5F-医梯】 */
+        let o = new TagData("tag1");
+        o.coordinate = [495269.37, 2491073.25, 25.4];
+        o.imagePath = HostConfig.Path + "/images/tag.png";
+        o.url = HostConfig.Path + "/int_popup.html";
+        o.imageSize = [28, 28];
+        o.text = "北京银行";
+        o.range = [1, 8000.0];
+        o.textRange = 3000;
+        o.showLine = true;
+        o.textColor = Color.Black;
+        o.textBackgroundColor = Color.White;
+        o.hoverImagePath = HostConfig.Path + "/images/hilightarea.png";
+        // await __g.tag.add(o);
+        __g.tag.focus(o.id, 200, 0);
       }
     },
   },

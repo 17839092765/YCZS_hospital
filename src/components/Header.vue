@@ -21,6 +21,7 @@ export default {
     reset() {
       // __g.camera.set();
       // __g.misc.setDateTime(2021, 4, 22, 11, 0, 0, false);
+      __g.reset();
     },
   },
   mounted() {},
