@@ -4,6 +4,7 @@
     <!-- <Synthetical /> -->
     <router-view></router-view>
     <Header />
+
     <div id="player"></div>
   </div>
 </template>

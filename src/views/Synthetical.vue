@@ -7,17 +7,27 @@
       <RightPages />
     </div>
     <FiveButton />
+    <BaoJing v-if="baojing" />
+    <RenyuanReli />
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Left from "../components/comSynthetical/Left";
 import RightPages from "./RightPages";
 import FiveButton from "./fivebutton";
+import BaoJing from "./baojing";
+import RenyuanReli from "./renyuanreli";
 export default {
   name: "Synthetical",
   data() {
     return {};
+  },
+  computed: {
+    ...mapState({
+      baojing: (state) => state.baojing,
+    }),
   },
   methods: {},
   mounted() {},
@@ -26,6 +36,8 @@ export default {
     Left,
     RightPages,
     FiveButton,
+    RenyuanReli,
+    BaoJing,
   },
 };
 </script>
