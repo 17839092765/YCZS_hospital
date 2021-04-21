@@ -1,11 +1,14 @@
 <template>
   <div class="synthetical">
-    <div class="left part"></div>
+    <div class="left part">
+      <Left />
+    </div>
     <div class="right part"></div>
   </div>
 </template>
 
 <script>
+import Left from "../components/comSynthetical/Left";
 export default {
   name: "Synthetical",
   data() {
@@ -14,16 +17,19 @@ export default {
   methods: {},
   mounted() {},
   beforeDestroy() {},
-  components: {},
+  components: {
+    Left,
+  },
 };
 </script>
 
 <style lang='scss' scoped>
 .synthetical {
+  height: 100%;
   .part {
     position: absolute;
     width: 4.5rem;
-    height: 6.4rem;
+    height: 100%;
   }
   .left {
     left: 0;

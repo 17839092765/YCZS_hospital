@@ -1,10 +1,10 @@
 <template>
-  <div  class='footer'></div>
+  <div  class=''></div>
 </template>
 
 <script>
 export default {
-  name: 'Footer',
+  name: '',
   data(){
     return {}
   },
@@ -16,10 +16,5 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.footer{
-  position: absolute;
-  bottom: 0;
-  height: 0.53rem;
-  width: 100%;
-}
+
 </style>

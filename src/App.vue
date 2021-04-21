@@ -13,6 +13,6 @@ export default {
 <style>
 #app {
   width: 100%;
-  height: 6.4rem;
+  height: 100%;
 }
 </style>

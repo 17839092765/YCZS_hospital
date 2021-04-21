@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <!-- <Footer /> -->
+    <Footer />
     <Synthetical />
     <Header />
   </div>
