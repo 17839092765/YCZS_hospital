@@ -21,11 +21,12 @@ export default {
 <style lang="scss" scoped>
 .title {
   width: 2.1rem;
-  height: 0.15rem;
+  height: 0.25rem;
+  line-height:  0.25rem;
   background: url("../../assets/img/box-title.png") no-repeat;
-  background-size: contain;
-  font-size: 12px;
+  background-size: cover;
+  font-size: 16px;
   box-sizing: border-box;
-  padding-left: 10px;
+  padding-left: 15px;
 }
 </style>

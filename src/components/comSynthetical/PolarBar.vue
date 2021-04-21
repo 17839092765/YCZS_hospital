@@ -17,6 +17,15 @@ export default {
     initChart() {
       var chartDom = this.$refs.chart;
       var myChart = echarts.init(chartDom);
+      let arr = [
+        {
+          name: "耳鼻咽喉科",
+          value: 65,
+        },
+        { name: "心血管内科", value: 50 },
+        { name: "妇科", value: 60 },
+        { name: "普通外科", value: 70 },
+      ];
       var option;
       option = {
         series: [
@@ -25,7 +34,7 @@ export default {
             name: "耳鼻咽喉科", //系列名称
             type: "pie", //饼图
             hoverAnimation: false, //是否开启hover(悬停)在扇区上的放大动画效果
-            radius: ["30%", "40%"], //饼图的半径,第一项是内半径，第二项是外半径
+            radius: ["25%", "35%"], //饼图的半径,第一项是内半径，第二项是外半径
             center: ["50%", "40%"],
             labelLine: {
               //标签的视觉引导线
@@ -57,8 +66,8 @@ export default {
             name: "心血管内科",
             type: "pie",
             hoverAnimation: false,
-            radius: ["45%", "55%"],
-             center: ["50%", "40%"],
+            radius: ["40%", "50%"],
+            center: ["50%", "40%"],
             labelLine: {
               normal: {
                 show: false,
@@ -87,8 +96,8 @@ export default {
             name: "妇科",
             type: "pie",
             hoverAnimation: false,
-            radius: ["60%", "70%"],
-             center: ["50%", "40%"],
+            radius: ["55%", "65%"],
+            center: ["50%", "40%"],
             labelLine: {
               normal: {
                 show: false,
@@ -117,8 +126,8 @@ export default {
             name: "普通外科",
             type: "pie",
             hoverAnimation: false,
-            radius: ["75%", "85%"],
-             center: ["50%", "40%"],
+            radius: ["70%", "80%"],
+            center: ["50%", "40%"],
             labelLine: {
               normal: {
                 show: false,
@@ -150,6 +159,16 @@ export default {
           bottom: "0%",
           textStyle: {
             color: "#fff",
+          },
+          formatter: function (name) {
+            var temp = arr.find((item) => {
+              if (item.name === name) {
+                return true;
+              }
+            });
+            return (
+              name + parseInt((temp.value / (65 + 50 + 60 + 70)) * 100) + "%"
+            );
           },
         },
       };
