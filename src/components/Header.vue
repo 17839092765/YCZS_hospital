@@ -1,6 +1,9 @@
 <template>
   <div class="header">
-    <div class="header-part left"></div>
+    <div class="header-part left">
+      <img src="../assets/img/（常规）医院LOGO.png" alt="">
+      <div class="reset">首页</div>
+    </div>
     <div class="header-title">
       <img src="../assets/img/top-title.png" alt="" />
     </div>
@@ -45,6 +48,17 @@ export default {
     width: 4.48rem;
     height: 0.57rem;
     background: url("../assets/img/left_logobg.png");
+    >img{
+      position: absolute;
+      width: 55%;
+      left: 20px;
+    }
+    .reset {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      cursor: pointer;
+    }
   }
   .right {
     right: 5px;

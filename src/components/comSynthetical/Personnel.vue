@@ -5,7 +5,7 @@
       <div v-for="(item, index) in list" :key="index">
         <div>{{ item.key }}</div>
         <div>
-          <span>{{ item.value }}</span>
+          <span>{{ item.value }}</span> &nbsp;
           <span>{{ item.unit }}</span>
         </div>
       </div>
@@ -61,13 +61,16 @@ export default {
 <style lang='scss' scoped>
 .personnel {
   width: 2.01rem;
-  height: 2.6rem;
 }
 .personnel-con {
+  margin-top: 25px;
   padding: 0 10px;
+  height: 2rem;
+  transform: scale(1.2);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-content: space-between;
   > div {
     margin: 10px 10px 10px;
 

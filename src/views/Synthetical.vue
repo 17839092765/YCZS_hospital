@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 .synthetical {
-  height: 100%;
+  // height: 95%;
   .part {
     position: absolute;
     width: 5rem;
