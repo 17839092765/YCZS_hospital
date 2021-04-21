@@ -149,8 +149,7 @@ export default {
           center/cover;
         transform: scale(2);
       }
-      span:last-child {
-      }
+
       span {
         float: left;
         margin-left: 0.02rem;
