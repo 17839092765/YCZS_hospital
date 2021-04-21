@@ -7,10 +7,10 @@
       <RightPages />
     </div>
     <FiveButton />
-    <!-- <div @click="isShowTag = true" class="button">隐藏按钮</div> -->
+    <div @click="isShowTag = true" class="button">隐藏按钮</div>
     <BaoJing v-if="baojing" />
     <RenyuanReli />
-    <div @click="isShowTag = !isShowTag" class="button">隐藏按钮</div>
+    <!-- <div @click="isShowTag = !isShowTag" class="button">隐藏按钮</div> -->
     <transition name="tag">
       <div v-if="isShowTag" class="tag" @click="isShowTag = false">
         <div>
