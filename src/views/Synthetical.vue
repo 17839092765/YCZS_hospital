@@ -32,7 +32,7 @@ export default {
   height: 100%;
   .part {
     position: absolute;
-    width: 4.5rem;
+    width: 5rem;
     height: 100%;
   }
   .left {

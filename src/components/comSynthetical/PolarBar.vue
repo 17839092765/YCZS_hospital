@@ -22,10 +22,11 @@ export default {
         series: [
           //系列列表。每个系列通过 type 决定自己的图表类型
           {
-            name: "A", //系列名称
+            name: "耳鼻咽喉科", //系列名称
             type: "pie", //饼图
             hoverAnimation: false, //是否开启hover(悬停)在扇区上的放大动画效果
             radius: ["30%", "40%"], //饼图的半径,第一项是内半径，第二项是外半径
+            center: ["50%", "40%"],
             labelLine: {
               //标签的视觉引导线
               normal: {
@@ -53,10 +54,11 @@ export default {
             ],
           },
           {
-            name: "B",
+            name: "心血管内科",
             type: "pie",
             hoverAnimation: false,
             radius: ["45%", "55%"],
+             center: ["50%", "40%"],
             labelLine: {
               normal: {
                 show: false,
@@ -82,10 +84,11 @@ export default {
             ],
           },
           {
-            name: "C",
+            name: "妇科",
             type: "pie",
             hoverAnimation: false,
             radius: ["60%", "70%"],
+             center: ["50%", "40%"],
             labelLine: {
               normal: {
                 show: false,
@@ -111,10 +114,11 @@ export default {
             ],
           },
           {
-            name: "D",
+            name: "普通外科",
             type: "pie",
             hoverAnimation: false,
             radius: ["75%", "85%"],
+             center: ["50%", "40%"],
             labelLine: {
               normal: {
                 show: false,
@@ -142,9 +146,11 @@ export default {
         ],
         legend: {
           show: true,
-          // data: ["A",'123'],
-          orient: "vertical",
-          align: "right",
+          data: ["耳鼻咽喉科", "心血管内科", "妇科", "普通外科"],
+          bottom: "0%",
+          textStyle: {
+            color: "#fff",
+          },
         },
       };
 
@@ -164,7 +170,7 @@ export default {
 <style lang='scss' scoped>
 .polarbar {
   .chart {
-    height: 1.8rem;
+    height: 2.6rem;
   }
 }
 </style>
