@@ -87,10 +87,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.shijianlist {
+  margin-top: 0.5rem;
+}
 .title {
+  font-weight: 600;
   width: 100%;
   height: 0.3rem;
   text-indent: 0.2rem;
+  margin-bottom: 0.1rem;
+
   background: url("../../../assets/img/box-title.png") no-repeat center/cover;
 }
 .shi_casebox {
@@ -151,9 +157,14 @@ export default {
       }
 
       span {
+        white-space: nowrap;
+        width: 0.72rem;
         float: left;
-        margin-left: 0.02rem;
+        margin-left: 0.03rem;
         -webkit-transform: scale(0.85);
+      }
+      span:nth-of-type(1) {
+        transform: scale(0.8);
       }
     }
   }

@@ -165,11 +165,12 @@ export default {
 <style lang="scss" scoped>
 .jidian {
   position: relative;
-  margin-top: 0.3rem;
+  margin-top: 0.6rem;
   .title {
     width: 100%;
     height: 0.3rem;
     text-indent: 0.2rem;
+    font-weight: 600;
     background: url("../../../assets/img/box-title.png") no-repeat center/cover;
   }
   .shebeilist {
@@ -204,7 +205,7 @@ export default {
       }
       .left_case {
         > div {
-          margin: 0.1rem 0;
+          margin: 0.14rem 0;
         }
         height: 0.8rem;
         i {
@@ -230,14 +231,17 @@ export default {
     .right {
       font-size: 0.14rem;
       width: 50%;
-      height: 100%;
+      height: 85%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      overflow-y: scroll;
+      margin-left: 0.5rem;
       .case {
-        width: 50%;
-        height: 0.5rem;
+        width: 85%;
+        height: 0.6rem;
+        text-align: center;
         /* display: flex;
         justify-content: space-between;
         align-items: flex-start; */
@@ -249,7 +253,7 @@ export default {
           }
         }
         .data {
-          width: 78%;
+          width: 60%;
           float: left;
           > p {
             margin-top: 0.01rem;
