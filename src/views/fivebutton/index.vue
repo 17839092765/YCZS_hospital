@@ -4,7 +4,7 @@
       :class="active === item.key && 'active'"
       v-for="(item, index) in btnlist"
       :key="index"
-      @click="active = item.key"
+      @click="interactive(item.key)"
     >
       <!-- {{ item.name }} -->
       <img v-if="active === item.key" :src="item.clickpath" alt="" />
@@ -66,7 +66,11 @@ export default {
   },
   computed: {},
   watch: {},
-  methods: {},
+  methods: {
+    interactive(active) {
+      this.active = active;
+    },
+  },
   created() {},
   mounted() {},
   beforeCreate() {},
