@@ -33,12 +33,15 @@ export default {
 <style lang="scss" scoped>
 .synthetical {
   // height: 95%;
+  z-index: 10;
   .part {
     position: absolute;
     width: 5rem;
     height: 100%;
   }
   .left {
+    z-index: 10;
+
     left: 0;
     background: linear-gradient(
       to left,
@@ -49,6 +52,8 @@ export default {
     // opacity: 0.8;
   }
   .right {
+    z-index: 10;
+
     width: 5rem;
     right: 0;
     background: linear-gradient(
