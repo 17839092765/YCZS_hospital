@@ -18,42 +18,131 @@ export default {
       var chartDom = this.$refs.chart;
       var myChart = echarts.init(chartDom);
       var option;
-
       option = {
-        angleAxis: {},
-        radiusAxis: {
-          show: false,
-          type: "category",
-          data: ["周一", "周二", "周三", "周四"],
-          //   z: 10,
-          axisLine: {
-            show: false,
-          },
-          splitLine: {
-            show: false,
-          },
-          axisTick: {
-            show: false,
-          },
-          axisLabel: {
-            show: false,
-          },
-        },
-        polar: {},
         series: [
+          //系列列表。每个系列通过 type 决定自己的图表类型
           {
-            type: "bar",
-            data: [2, 2, 3, 4],
-            coordinateSystem: "polar",
-            name: "A",
-            emphasis: {
-              focus: "series",
+            name: "A", //系列名称
+            type: "pie", //饼图
+            hoverAnimation: false, //是否开启hover(悬停)在扇区上的放大动画效果
+            radius: ["30%", "40%"], //饼图的半径,第一项是内半径，第二项是外半径
+            labelLine: {
+              //标签的视觉引导线
+              normal: {
+                show: false,
+              },
             },
+            data: [
+              //系列中的数据内容数组
+              {
+                value: 65,
+                itemStyle: {
+                  normal: {
+                    color: "#946DC3", //柱图显示颜色
+                  },
+                },
+              },
+              {
+                value: 35,
+                itemStyle: {
+                  normal: {
+                    color: "RGBA(0,186,255,0)", //柱图透明色
+                  },
+                },
+              },
+            ],
+          },
+          {
+            name: "B",
+            type: "pie",
+            hoverAnimation: false,
+            radius: ["45%", "55%"],
+            labelLine: {
+              normal: {
+                show: false,
+              },
+            },
+            data: [
+              {
+                value: 50,
+                itemStyle: {
+                  normal: {
+                    color: "#2FD0B3",
+                  },
+                },
+              },
+              {
+                value: 50,
+                itemStyle: {
+                  normal: {
+                    color: "RGBA(0,186,255,0)",
+                  },
+                },
+              },
+            ],
+          },
+          {
+            name: "C",
+            type: "pie",
+            hoverAnimation: false,
+            radius: ["60%", "70%"],
+            labelLine: {
+              normal: {
+                show: false,
+              },
+            },
+            data: [
+              {
+                value: 60,
+                itemStyle: {
+                  normal: {
+                    color: "#F8D17B",
+                  },
+                },
+              },
+              {
+                value: 40,
+                itemStyle: {
+                  normal: {
+                    color: "RGBA(0,186,255,0)",
+                  },
+                },
+              },
+            ],
+          },
+          {
+            name: "D",
+            type: "pie",
+            hoverAnimation: false,
+            radius: ["75%", "85%"],
+            labelLine: {
+              normal: {
+                show: false,
+              },
+            },
+            data: [
+              {
+                value: 70,
+                itemStyle: {
+                  normal: {
+                    color: "#1A98F7",
+                  },
+                },
+              },
+              {
+                value: 30,
+                itemStyle: {
+                  normal: {
+                    color: "RGBA(0,186,255,0)",
+                  },
+                },
+              },
+            ],
           },
         ],
         legend: {
           show: true,
-          data: ["A",'123'],
+          // data: ["A",'123'],
           orient: "vertical",
           align: "right",
         },
