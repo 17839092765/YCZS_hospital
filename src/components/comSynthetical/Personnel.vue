@@ -61,6 +61,7 @@ export default {
 <style lang='scss' scoped>
 .personnel {
   width: 2.01rem;
+  height: 2.6rem;
 }
 .personnel-con {
   padding: 0 10px;

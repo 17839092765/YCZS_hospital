@@ -38,9 +38,9 @@ export default {
 <style lang='scss' scoped>
 .synleft {
   width: 100%;
-  height: 7.9rem;
+  height: 100%;
   box-sizing: border-box;
-  margin: 0.84rem 0 0 0;
+  padding: 0.84rem 0 0 0;
   display: flex;
   justify-content: space-around;
   align-content: space-between;

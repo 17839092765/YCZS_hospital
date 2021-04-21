@@ -20,7 +20,7 @@ export default {
 
 <style lang='scss' scoped>
 .title {
-  width: 2.01rem;
+  width: 2.1rem;
   height: 0.15rem;
   background: url("../../assets/img/box-title.png") no-repeat;
   background-size: contain;

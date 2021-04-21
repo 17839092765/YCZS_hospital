@@ -54,7 +54,7 @@ export default {
 .facility {
   width: 2.01rem;
   .facility-list {
-    margin-top: 14px;
+    margin-top: 24px;
     display: flex;
     flex-wrap: wrap;
     > div {
@@ -68,7 +68,7 @@ export default {
       align-items: center;
       white-space: nowrap;
       margin-right: 6px;
-      margin-bottom: 5px;
+      margin-bottom: 25px;
       > div:first-of-type {
         transform: scale(0.66667);
       }
