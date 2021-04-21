@@ -14,8 +14,8 @@ export default {
         {
           name: "医院报警系统",
           key: 1,
-          path: "",
-          clickpath: "",
+          path: "icon_报警2.png",
+          clickpath: "icon_报警1.png",
         },
         {
           name: "视频监控系统",
@@ -77,8 +77,14 @@ export default {
   position: absolute;
   left: 5rem;
   bottom: 1rem;
-  width: 1rem;
+  width: 0.5rem;
   height: 4rem;
   background: #000;
+  .case {
+    width: 100%;
+    height: 0.5rem;
+    background: #000;
+    margin: 0.05rem 0;
+  }
 }
 </style>
