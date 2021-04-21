@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .title {
   width: 2.1rem;
   height: 0.25rem;

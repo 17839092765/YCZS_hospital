@@ -41,9 +41,11 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .footer {
   position: absolute;
+  z-index: 10;
+
   bottom: 0;
   height: 0.53rem;
   width: 100%;

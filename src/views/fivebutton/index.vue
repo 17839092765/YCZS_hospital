@@ -39,8 +39,8 @@ export default {
         {
           name: "火灾报警系统",
           key: 4,
-          path: require("../../assets/img/icon_烟感1.png"),
-          clickpath: require("../../assets/img/icon_烟感2.png"),
+          path: require("../../assets/img/icon_热力1.png"),
+          clickpath: require("../../assets/img/icon_热力2.png"),
         },
         {
           name: "门禁管理系统",
@@ -71,6 +71,7 @@ export default {
       this.active = active;
       switch (active) {
         case 1:
+          console.log(1);
           break;
         case 2:
           break;
@@ -81,11 +82,44 @@ export default {
         case 5:
           break;
         case 6:
+          this.reli();
+
           break;
         case 7:
+          this.dianti();
           break;
         default:
           break;
+      }
+    },
+    // 拆楼
+    reli() {
+      console.log(1);
+      let f = new BPFunctionData();
+      f.objectName = "BP_BuildLayer_5";
+      f.functionName = "Openlayer";
+      f.paramType = BPFuncParamType.String;
+      f.paramValue = "True";
+      __g.misc.callBPFunction(f);
+    },
+
+    // 电梯
+    async dianti() {
+      console.log("dianti");
+      if (__g) {
+        __g.weather.setDarkMode(true);
+        // __g.tileLayer.enableXRay("4A6E3FD040D6B80DF6D0A29CF4CC57C7", [
+        //   1,
+        //   0,
+        //   1,
+        //   0.0381,
+        // ]);
+        // __g.tileLayer.disableXRay("4A6E3FD040D6B80DF6D0A29CF4CC57C7");
+
+        let coordinate = [-500.14, -8038.16, 5.47]; //热力点的坐标
+        let radius = 4000; //热力点影像半径范围
+        let heatValue = 0.8; //热力值
+        o1 = new HeatMapPointData("1", coordinate, radius, heatValue);
       }
     },
   },
@@ -104,6 +138,8 @@ export default {
 
 <style lang="scss" scoped>
 .fivebutton {
+  z-index: 10;
+
   position: absolute;
   left: 5rem;
   bottom: 1rem;

@@ -4,6 +4,7 @@
     <!-- <Synthetical /> -->
     <router-view></router-view>
     <Header />
+    <div id="player"></div>
   </div>
 </template>
 
@@ -25,3 +26,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+#player {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+</style>

@@ -29,8 +29,10 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .header {
+  z-index: 10;
+
   width: 100%;
   position: absolute;
   top: 0;
