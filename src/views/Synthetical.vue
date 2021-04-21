@@ -3,12 +3,15 @@
     <div class="left part">
       <Left />
     </div>
-    <div class="right part"></div>
+    <div class="right part">
+      <RightPages />
+    </div>
   </div>
 </template>
 
 <script>
 import Left from "../components/comSynthetical/Left";
+import RightPages from "./RightPages";
 export default {
   name: "Synthetical",
   data() {
@@ -19,11 +22,12 @@ export default {
   beforeDestroy() {},
   components: {
     Left,
+    RightPages,
   },
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .synthetical {
   height: 100%;
   .part {
@@ -42,6 +46,7 @@ export default {
     // opacity: 0.8;
   }
   .right {
+    width: 5rem;
     right: 0;
     background: linear-gradient(
       to right,
