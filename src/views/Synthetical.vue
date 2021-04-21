@@ -9,6 +9,15 @@
     <FiveButton />
     <BaoJing v-if="baojing" />
     <RenyuanReli />
+    <div @click="isShowTag = !isShowTag" class="button">隐藏按钮</div>
+    <transition name="tag">
+      <div v-if="isShowTag" class="tag">
+        <div>
+          <span>报警：</span>
+          <span>监测到电梯报警</span>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -22,7 +31,9 @@ import RenyuanReli from "./renyuanreli";
 export default {
   name: "Synthetical",
   data() {
-    return {};
+    return {
+      isShowTag: false,
+    };
   },
   computed: {
     ...mapState({
@@ -76,5 +87,45 @@ export default {
     );
     // opacity: 0.8;
   }
+}
+.button {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  top: 400px;
+  left: 500px;
+  color: #ccc;
+  // opacity: 0;
+}
+.tag {
+  position: absolute;
+  left: 5rem;
+  top: 1rem;
+  z-index: 1;
+  width: 2.5rem;
+  height: 0.25rem;
+  padding-right: 10px;
+  text-align: right;
+  font-size: 16px;
+  background-color: #72261e;
+  overflow: hidden;
+}
+.tag-enter-active,
+.tag-leave-active {
+  transition: all 0.3s linear;
+}
+
+.tag-enter {
+  width: 0;
+}
+.tag-leave {
+  width: 2.5rem;
+}
+.tag-enter-to {
+  width: 2.5rem;
+}
+.tag-leave-to {
+  width: 0;
 }
 </style>
