@@ -1,20 +1,48 @@
 <template>
-  <div  class=''></div>
+  <div class="synleft">
+    <Personnel />
+    <PolarBar />
+    <Bar />
+    <Energy />
+    <Facility />
+    <Parking />
+  </div>
 </template>
 
 <script>
+import Personnel from "./Personnel";
+import PolarBar from "./PolarBar";
+import Bar from "./Bar";
+import Energy from "./Energy";
+import Facility from "./Facility";
+import Parking from "./Parking";
 export default {
-  name: '',
-  data(){
-    return {}
+  name: "Left",
+  data() {
+    return {};
   },
   methods: {},
   mounted() {},
   beforeDestroy() {},
-  components: {},
+  components: {
+    Personnel,
+    PolarBar,
+    Bar,
+    Energy,
+    Facility,
+    Parking,
+  },
 };
 </script>
 
 <style lang='scss' scoped>
-
+.synleft {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0.84rem 0 0 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 </style>

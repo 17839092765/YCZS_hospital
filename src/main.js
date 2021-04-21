@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import './plugins/element.js'
 import './assets/css/global.css'
+import * as echarts from 'echarts'
 
 Vue.config.productionTip = false
 
@@ -15,6 +16,8 @@ function resize() {
 resize()
 window.addEventListener('resize', resize)
 document.documentElement.addEventListener('DOMContentLoaded', resize)
+
+window.echarts = echarts
 
 new Vue({
   router,
