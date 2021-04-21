@@ -39,8 +39,8 @@ export default {
         {
           name: "火灾报警系统",
           key: 4,
-          path: require("../../assets/img/icon_热力1.png"),
-          clickpath: require("../../assets/img/icon_热力2.png"),
+          path: require("../../assets/img/icon_烟感1.png"),
+          clickpath: require("../../assets/img/icon_烟感2.png"),
         },
         {
           name: "门禁管理系统",
