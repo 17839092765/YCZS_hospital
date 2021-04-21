@@ -18,7 +18,16 @@ export default {
       var chartDom = this.$refs.chart;
       var myChart = echarts.init(chartDom);
       var option;
-
+      var arr = [
+        {
+          name: "电耗",
+          value: 3324,
+        },
+        {
+          name: "水耗",
+          value: 1149,
+        },
+      ];
       option = {
         color: ["#5DCFF1", "#FEEAA6"],
         tooltip: {
@@ -30,7 +39,7 @@ export default {
             name: "",
             type: "pie",
             radius: ["40%", "60%"],
-            center: ["65%", "50%"],
+            center: ["50%", "40%"],
             avoidLabelOverlap: false,
             label: {
               show: false,
@@ -44,7 +53,7 @@ export default {
               { value: 1149, name: "水耗" },
             ],
             label: {
-              show: true,
+              show: false,
               fontSize: "10",
               color: "#fff",
               align: "left",
@@ -55,6 +64,31 @@ export default {
             },
           },
         ],
+        legend: {
+          bottom: "0%",
+          textStyle: {
+            color: "#fff",
+          },
+          formatter: function (name) {
+            const total = arr.reduce((p, c) => {
+              return (p = p + c.value);
+            }, 0);
+            const temp = arr.find((item) => {
+              if (item.name === name) {
+                return true;
+              }
+            });
+            return (
+              name +
+              " " +
+              temp.value +
+              "kWh" +
+              " " +
+              parseInt((temp.value / total) * 100) +
+              "%"
+            );
+          },
+        },
       };
 
       option && myChart.setOption(option);
@@ -72,6 +106,6 @@ export default {
 
 <style lang='scss' scoped>
 .chart {
-  height: 1.8rem;
+  height: 2.2rem;
 }
 </style>

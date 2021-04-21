@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-part left">
-      <img src="../assets/img/（常规）医院LOGO.png" alt="" />
+      <img src="../assets/img/logo.png" alt="" />
       <div class="reset" @click="reset">首页</div>
     </div>
     <div class="header-title">
@@ -56,7 +56,8 @@ export default {
     > img {
       position: absolute;
       width: 55%;
-      left: 20px;
+      left: 25px;
+      top: 5px;
     }
     .reset {
       position: absolute;
