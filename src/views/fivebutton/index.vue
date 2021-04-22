@@ -18,6 +18,7 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
+      path: "E:\\Freedo\\中山医院\\YCZS_hospital\\src\\assets\\video\\",
       btnlist: [
         {
           name: "医院报警系统",
@@ -73,7 +74,32 @@ export default {
   watch: {},
   methods: {
     interactive(active) {
+      __g.tag.clear();
+      if (this.$store.state.chailouFalg) {
+        let f = new BPFunctionData();
+        f.objectName = "BP_BuildLayer_5";
+        f.functionName = "Openlayer";
+        f.paramType = BPFuncParamType.String;
+        f.paramValue = "True";
+        __g.misc.callBPFunction(f);
+        this.$store.commit("chailouFalg", false);
+      }
+      // __g.camera.lookAt(
+      //   168.938278,
+      //   761.998657,
+      //   253.821777,
+      //   -27.264795,
+      //   104.205376,
+      //   0
+      // );
       this.$store.commit("baojing", false);
+      __g.weather.setDateTime(2021, 4, 22, 16, 0, 0, false);
+      let f = new BPFunctionData();
+      f.objectName = "BP_BuildLayer_5";
+      f.functionName = "SetXLight";
+      f.paramType = BPFuncParamType.String;
+      f.paramValue = "False";
+      __g.misc.callBPFunction(f);
 
       this.active = active;
       switch (active) {
@@ -83,12 +109,15 @@ export default {
 
           break;
         case 2:
+          this.reli();
           break;
         case 3:
           break;
         case 4:
           break;
         case 5:
+          this.menjin();
+
           break;
         case 6:
           this.reli();
@@ -101,15 +130,73 @@ export default {
           break;
       }
     },
+    // 门禁
+    menjin() {
+      __g.camera.lookAt(
+        168.938278,
+        761.998657,
+        353.821777,
+        -27.264795,
+        84.205376,
+        0
+      );
+      if (!this.$store.state.chailouFalg) {
+        let f = new BPFunctionData();
+        f.objectName = "BP_BuildLayer_5";
+        f.functionName = "Openlayer";
+        f.paramType = BPFuncParamType.String;
+        f.paramValue = "True";
+        __g.misc.callBPFunction(f);
+        this.$store.commit("chailouFalg", true);
+      }
+      // 标签1
+      let id1 = "SN-1111"; //标签的ID，字符串值，也可以用数字（内部会自动转成字符串）
+      let coord1 = [
+        230.70632934570312,
+        515.3101196289062,
+        -0.000009765624781721272,
+      ]; //坐标值：标签添加的位置
+      let imagePath1 = ""; //图片路径，可以是本地路径，也支持网络路径
+      let url1 = this.path + "16-大西门云台.mp4"; //鼠标点击标签后弹出的网页的URL，也可以是本地视频文件，鼠标点击标签后会弹出视频播放窗口
+      let imageSize1 = [28, 28]; //图片的尺寸
+      let text1 = "正常"; //标签显示的文字
+      let range1 = [1, 8000.0]; //标签的可见范围
+      let showLine1 = true; //标签下方是否显示垂直牵引线
+
+      let o1 = new TagData(
+        id1,
+        coord1,
+        imagePath1,
+        imageSize1,
+        url1,
+        text1,
+        range1,
+        showLine1
+      );
+      o1.textColor = [1, 1, 1, 1]; //设置文字颜色
+      o1.textBackgroundColor = Color.Green;
+
+      __g.tag.add(o1);
+    },
     // 拆楼
     reli() {
-      this.$store.commit("chailouFalg", true);
-      let f = new BPFunctionData();
-      f.objectName = "BP_BuildLayer_5";
-      f.functionName = "Openlayer";
-      f.paramType = BPFuncParamType.String;
-      f.paramValue = "True";
-      __g.misc.callBPFunction(f);
+      if (!this.$store.state.chailouFalg) {
+        let f = new BPFunctionData();
+        f.objectName = "BP_BuildLayer_5";
+        f.functionName = "Openlayer";
+        f.paramType = BPFuncParamType.String;
+        f.paramValue = "True";
+        __g.misc.callBPFunction(f);
+        this.$store.commit("chailouFalg", true);
+      }
+      __g.camera.lookAt(
+        168.938278,
+        761.998657,
+        453.821777,
+        -27.264795,
+        84.205376,
+        0
+      );
     },
 
     // 电梯
@@ -121,12 +208,24 @@ export default {
         （2）在红色异常电梯上，打红色异常电梯标签【住院楼-5F-医梯】   点击首页需回到默认初始视角和状态。
         */
         /* 设置时间 */
-        // await __g.weather.setDateTime(2021, 4, 22, 23, 0, 0, false);
-        /* X光模式 */
-        await __g.tileLayer.enableXRay(
-          "01CC25A649555B383446ED9CF9FC6ED1",
-          Color.LightBLue
+        await __g.weather.setDateTime(2021, 4, 22, 23, 0, 0, false);
+
+        let f = new BPFunctionData();
+        f.objectName = "BP_BuildLayer_5";
+        f.functionName = "SetXLight";
+        f.paramType = BPFuncParamType.String;
+        f.paramValue = "True";
+        __g.misc.callBPFunction(f);
+
+        __g.camera.lookAt(
+          168.938278,
+          761.998657,
+          253.821777,
+          -27.264795,
+          84.205376,
+          0
         );
+
         /* 镜头正视建筑 */
         // await __g.camera.set(
         //   168.938278,
@@ -136,21 +235,31 @@ export default {
         //   84.205376,
         //   0
         // );
+
         /* 打红色异常电梯标签【住院楼-5F-医梯】 */
-        let o = new TagData("tag1");
-        o.coordinate = [495269.37, 2491073.25, 25.4];
-        o.imagePath = HostConfig.Path + "/images/tag.png";
-        o.url = HostConfig.Path + "/int_popup.html";
-        o.imageSize = [28, 28];
-        o.text = "北京银行";
-        o.range = [1, 8000.0];
-        o.textRange = 3000;
-        o.showLine = true;
-        o.textColor = Color.Black;
-        o.textBackgroundColor = Color.White;
-        o.hoverImagePath = HostConfig.Path + "/images/hilightarea.png";
-        // await __g.tag.add(o);
-        __g.tag.focus(o.id, 200, 0);
+        // 标签4
+        let id4 = "5FF"; //标签的ID，字符串值，也可以用数字（内部会自动转成字符串）
+        let coord4 = [202.37767028808594, 481.6473083496094, 22.59228515625]; //坐标值：标签添加的位置
+        let imagePath4 = ""; //图片路径，可以是本地路径，也支持网络路径
+        let url4 = ""; //鼠标点击标签后弹出的网页的URL，也可以是本地视频文件，鼠标点击标签后会弹出视频播放窗口
+        let imageSize4 = [28, 28]; //图片的尺寸
+        let text4 = "异常"; //标签显示的文字
+        let range4 = [1, 8000.0]; //标签的可见范围
+        let showLine4 = true; //标签下方是否显示垂直牵引线
+
+        let o4 = new TagData(
+          id4,
+          coord4,
+          imagePath4,
+          imageSize4,
+          url4,
+          text4,
+          range4,
+          showLine4
+        );
+        o4.textColor = [1, 1, 1, 1]; //设置文字颜色
+        o4.textBackgroundColor = Color.Red;
+        __g.tag.add(o4);
       }
     },
   },

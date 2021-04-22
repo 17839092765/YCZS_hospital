@@ -4,7 +4,12 @@
       事件列表
     </div>
     <div class="shi_casebox">
-      <div class="case" v-for="(item, index) in shidata" :key="index">
+      <div
+        @click="tolooklou(item.key ? item.key : 0)"
+        class="case"
+        v-for="(item, index) in shidata"
+        :key="index"
+      >
         <div class="tit">{{ item.tit }}</div>
         <div class="bottom">
           <i class="right_fangxiang"></i>
@@ -42,6 +47,7 @@ export default {
           class: "消防报警",
           time: "2021/04/19",
           flag: false,
+          key: 10,
         },
         {
           tit: "安防报警",
@@ -72,7 +78,45 @@ export default {
   },
   computed: {},
   watch: {},
-  methods: {},
+  methods: {
+    tolooklou(val) {
+      let id4 = "wree"; //标签的ID，字符串值，也可以用数字（内部会自动转成字符串）
+      let coord4 = [223.996337890625, 511.6087646484375, 152.8629608154297]; //坐标值：标签添加的位置
+      let imagePath4 = ""; //图片路径，可以是本地路径，也支持网络路径
+      let url4 = ""; //鼠标点击标签后弹出的网页的URL，也可以是本地视频文件，鼠标点击标签后会弹出视频播放窗口
+      let imageSize4 = [28, 28]; //图片的尺寸
+      let text4 = "异常"; //标签显示的文字
+      let range4 = [1, 8000.0]; //标签的可见范围
+      let showLine4 = true; //标签下方是否显示垂直牵引线
+
+      let o4 = new TagData(
+        id4,
+        coord4,
+        imagePath4,
+        imageSize4,
+        url4,
+        text4,
+        range4,
+        showLine4
+      );
+      o4.textColor = [1, 1, 1, 1]; //设置文字颜色
+      o4.textBackgroundColor = Color.Red;
+
+      console.log(val);
+      let f = new BPFunctionData();
+      f.objectName = "BP_BuildLayer_5";
+      f.functionName = "Clicklayer";
+      f.paramType = BPFuncParamType.Float;
+      f.paramValue = val;
+
+      __g.misc.callBPFunction(f, (e) => {
+        console.log(e, 123213213);
+        setTimeout(() => {
+          __g.tag.add(o4);
+        }, 3000);
+      });
+    },
+  },
   created() {},
   mounted() {},
   beforeCreate() {},

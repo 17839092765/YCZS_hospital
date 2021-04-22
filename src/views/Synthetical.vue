@@ -9,9 +9,11 @@
     <FiveButton />
     <BaoJing v-if="baojing" />
     <RenyuanReli />
-    <div @click="isShowTag = !isShowTag" class="button">隐藏按钮</div>
+
+    <div @click="isShowTag = true" class="button">隐藏按钮</div>
+
     <transition name="tag">
-      <div v-if="isShowTag" class="tag">
+      <div v-if="isShowTag" @click="isShowTag = false" class="tag">
         <div>
           <span>报警：</span>
           <span>监测到电梯报警</span>

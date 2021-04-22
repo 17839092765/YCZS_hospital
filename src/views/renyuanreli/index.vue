@@ -72,7 +72,9 @@ export default {
     line-height: 0.5rem;
     height: 0.5rem;
     margin: 0.05rem;
-    background: rgba(0, 0, 0, 0.507);
+    font-weight: 600;
+    color: rgb(226, 175, 33);
+    background: rgba(124, 124, 124, 0.692);
   }
 }
 </style>
